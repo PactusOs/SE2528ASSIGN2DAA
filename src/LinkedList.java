@@ -7,7 +7,6 @@ public class LinkedList{
             this.value=value;
         }
     }
-
     private Node head;
     private Node tail;
     private int size;
@@ -24,7 +23,6 @@ public class LinkedList{
         }
         size++;
     }
-
     public void add(int index,int x){
         checkAddIndex(index);
         if(index==size){
@@ -40,7 +38,6 @@ public class LinkedList{
         current.prev=node;
         size++;
     }
-
     public int remove(int index){
         checkIndex(index);
         Node current=nodeAt(index);
@@ -51,11 +48,9 @@ public class LinkedList{
         size--;
         return current.value;
     }
-
     public int get(int index){
         return nodeAt(index).value;
     }
-
     public boolean contains(int x){
         Node current=head;
         while(current!=null){
@@ -66,7 +61,6 @@ public class LinkedList{
         }
         return false;
     }
-
     public int size(){
         return size;
     }
@@ -75,19 +69,15 @@ public class LinkedList{
         accesses=0;
         comparisons=0;
     }
-
     public long getAccesses(){
         return accesses;
     }
-
     public long getComparisons(){
         return comparisons;
     }
-
     public long getMovements(){
         return 0;
     }
-
     private Node nodeAt(int index){
         checkIndex(index);
         if(index<size/2){
@@ -105,11 +95,9 @@ public class LinkedList{
         }
         return current;
     }
-
     private void checkIndex(int index){
         if(index<0||index>=size)throw new IndexOutOfBoundsException();
     }
-
     private void checkAddIndex(int index){
         if(index<0||index>size)throw new IndexOutOfBoundsException();
     }

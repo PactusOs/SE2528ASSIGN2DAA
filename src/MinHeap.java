@@ -15,12 +15,10 @@ public class MinHeap{
             i=parent;
         }
     }
-
     public int peekMin(){
         if(size==0)throw new java.util.NoSuchElementException();
         return data[0];
     }
-
     public int extractMin(){
         if(size==0)throw new java.util.NoSuchElementException();
         int min=data[0];
@@ -28,19 +26,15 @@ public class MinHeap{
         if(size>0)siftDown(0);
         return min;
     }
-
     public int size(){
         return size;
     }
-
     public long getComparisons(){
         return comparisons;
     }
-
     public void resetMetrics(){
         comparisons=0;
     }
-
     public boolean isValid(){
         for(int i=0;i<size;i++){
             int left=2*i+1;
@@ -50,7 +44,6 @@ public class MinHeap{
         }
         return true;
     }
-
     private void siftDown(int i){
         while(true){
             int left=2*i+1;
@@ -67,7 +60,6 @@ public class MinHeap{
             i=child;
         }
     }
-
     private void ensureCapacity(){
         if(size==data.length){
             int[] next=new int[data.length*2];

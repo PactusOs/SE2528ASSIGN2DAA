@@ -10,7 +10,6 @@ public class Benchmark{
     private static final int SEARCHES=1000;
     private static final int UPDATES=1000;
     private static final int SEED=42;
-
     private static class Result{
         double time;
         long metric;
@@ -26,7 +25,6 @@ public class Benchmark{
             this.valid=valid;
         }
     }
-
     public static void main(String[] args)throws Exception{
         new File("results/tables").mkdirs();
         warmup();
@@ -150,7 +148,6 @@ public class Benchmark{
         }
         return new Result(time/TRIALS,metric);
     }
-
     private static Result avgListContains(int[] values,int[] queries){
         double time=0;
         long metric=0;
@@ -165,7 +162,6 @@ public class Benchmark{
         }
         return new Result(time/TRIALS,metric);
     }
-
     private static Result avgArrayUpdate(int[] values,int index,boolean insert){
         double time=0;
         long metric=0;
@@ -185,7 +181,6 @@ public class Benchmark{
         }
         return new Result(time/TRIALS,metric);
     }
-
     private static Result avgListUpdate(int[] values,int index,boolean insert){
         double time=0;
         long timeMetric=0;
@@ -205,7 +200,6 @@ public class Benchmark{
         }
         return new Result(time/TRIALS,timeMetric);
     }
-
     private static Result avgHeapInsert(int[] values){
         double time=0;
         long metric=0;
@@ -220,7 +214,6 @@ public class Benchmark{
         }
         return new Result(time/TRIALS,metric);
     }
-
     private static Result avgHeapExtract(int[] values){
         double time=0;
         long metric=0;
@@ -247,7 +240,6 @@ public class Benchmark{
         for(int x:values)a.add(x);
         return a;
     }
-
     private static LinkedList buildList(int[] values){
         LinkedList a=new LinkedList();
         for(int x:values)a.add(x);
@@ -265,7 +257,6 @@ public class Benchmark{
         for(int i=0;i<count;i++)values[i]=r.nextInt(n);
         return values;
     }
-
     private static void row(FileWriter w,int n,String structure,Result r,String theoretical)throws IOException{
         w.write(n+","+structure+","+format(r.time)+","+r.metric+","+theoretical+"\n");
     }
@@ -273,7 +264,6 @@ public class Benchmark{
     private static void row(FileWriter w,int n,String structure,String position,String operation,Result r,String theoretical)throws IOException{
         w.write(n+","+structure+","+position+","+operation+","+format(r.time)+","+r.metric+","+theoretical+"\n");
     }
-
     private static String format(double value){
         return String.format(java.util.Locale.US,"%.4f",value);
     }

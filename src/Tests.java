@@ -3,9 +3,8 @@ public class Tests{
         testDynamicArray();
         testLinkedList();
         testMinHeap();
-        System.out.println("All tests passed");
+        System.out.println("Tests passed");
     }
-
     private static void testDynamicArray(){
         DynamicArray a=new DynamicArray();
         check(a.size()==0);
@@ -34,7 +33,6 @@ public class Tests{
         ref.remove(5000);
         for(int i=0;i<ref.size();i++)check(b.get(i)==ref.get(i));
     }
-
     private static void testLinkedList(){
         LinkedList a=new LinkedList();
         check(a.size()==0);
@@ -63,7 +61,6 @@ public class Tests{
         ref.remove(5000);
         for(int i=0;i<ref.size();i++)check(b.get(i)==ref.get(i));
     }
-
     private static void testMinHeap(){
         MinHeap h=new MinHeap();
         check(h.size()==0);
@@ -87,7 +84,6 @@ public class Tests{
         }
         check(ref.isEmpty());
     }
-
     private static void check(boolean value){
         if(!value)throw new AssertionError();
     }
@@ -98,7 +94,6 @@ public class Tests{
             throw new AssertionError();
         }catch(IndexOutOfBoundsException e){}
     }
-
     private static void expectEmpty(Runnable r){
         try{
             r.run();
