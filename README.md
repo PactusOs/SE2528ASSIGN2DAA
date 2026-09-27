@@ -65,17 +65,6 @@ The included results were measured with OpenJDK 21.0.11 on Linux x86_64 using th
 For workload 3, n=100 cannot support 1,000 removals from the original n elements. To keep the required m=1,000, the removal phase starts from n+1,000 elements prepared before timing. This keeps the removal count and index valid for every required n.
 
 
-##  Plots
-
-### Plot 1 — Execution Time vs. n
-
-![Execution Time vs n](results/plots/plot1_execution_time_vs_n.png)
-
-### Plot 2 — Comparisons vs. n
-
-![Comparisons vs n](results/plots/plot2_comparisons_vs_n.png)
-
-
 ##  How to Run
 
 Compile all source files:
