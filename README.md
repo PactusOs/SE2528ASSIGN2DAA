@@ -95,7 +95,7 @@ java -cp src Benchmark
 | Middle Insertion / Removal | Depends on workload details | Both are Θ(n) here, but for different physical work |
 | Priority Processing | Min-Heap | peekMin() Θ(1), insert/extractMin() Θ(log n) |
 
-## 12. Conclusion
+##  Conclusion
 
 The implementations satisfy the required operations and correctness tests. The experiments show the effect of physical organization: direct array indexing stays constant-time, linked traversal grows with distance through the list, linked beginning updates avoid shifting, and heap ordering supports repeated minimum extraction. The measured results generally follow the theoretical complexity while showing the expected effects of real JVM and hardware behavior.
 
